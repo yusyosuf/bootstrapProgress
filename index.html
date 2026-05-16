@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <style>
-    
 :root {
   --gl-primary:       #2F3F2E;
   --gl-primary-mid:   #3AAFA0;
@@ -24,646 +24,99 @@
   --gl-text:          #1A2E28;
   --gl-muted:         #5A7268;
   --bs-primary:       #1B5E4F;
+  --gl-accent:        #3AAFA0;
   --bs-primary-rgb:   27,94,79;
   font-size: 16px;
 }
-
 * { box-sizing: border-box; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--gl-bg);
-  color: var(--gl-text);
-  overflow-x: hidden;
-}
-
-h1, h2, h3, .display-font {
-  font-family: 'Playfair Display', serif;
-}
+body { font-family: 'DM Sans', sans-serif; background: var(--gl-bg); color: var(--gl-text); overflow-x: hidden; }
+h1, h2, h3, .display-font { font-family: 'Playfair Display', serif; }
 
 /* ── Navbar ── */
-.navbar-main {
-  background: var(--gl-primary);
-  padding: 14px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 20px rgba(27,94,79,0.25);
-}
-.navbar-brand-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fff !important;
-  letter-spacing: -0.01em;
-}
-.navbar-brand-sub {
-  font-size: 0.65rem;
-  color: #9FE5C8;
-  font-weight: 400;
-  display: block;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-top: -3px;
-}
-.navbar-main .nav-link {
-  color: rgba(255,255,255,0.8) !important;
-  font-size: 0.875rem;
-  font-weight: 500;
-  padding: 6px 14px !important;
-  border-radius: 6px;
-  transition: all 0.2s;
-}
-.navbar-main .nav-link:hover {
-  color: #fff !important;
-  background: rgba(255,255,255,0.1);
-}
-.navbar-icon-btn {
-  color: rgba(255,255,255,0.8);
-  background: transparent;
-  border: none;
-  font-size: 1.2rem;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: all 0.2s;
-  position: relative;
-}
+.navbar-main { background: var(--gl-primary); padding: 14px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(27,94,79,0.25); }
+.navbar-brand-text { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: #fff !important; letter-spacing: -0.01em; }
+.navbar-brand-sub { font-size: 0.65rem; color: #9FE5C8; font-weight: 400; display: block; letter-spacing: 0.12em; text-transform: uppercase; margin-top: -3px; }
+.navbar-main .nav-link { color: rgba(255,255,255,0.8) !important; font-size: 0.875rem; font-weight: 500; padding: 6px 14px !important; border-radius: 6px; transition: all 0.2s; }
+.navbar-main .nav-link:hover { color: #fff !important; background: rgba(255,255,255,0.1); }
+.navbar-icon-btn { color: rgba(255,255,255,0.8); background: transparent; border: none; font-size: 1.2rem; padding: 6px 10px; border-radius: 6px; transition: all 0.2s; position: relative; }
 .navbar-icon-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
-.cart-badge {
-  position: absolute;
-  top: 2px; right: 4px;
-  background: var(--gl-cta);
-  color: #fff;
-  font-size: 0.6rem;
-  width: 16px; height: 16px;
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700;
-}
+.cart-badge { position: absolute; top: 2px; right: 4px; background: var(--gl-cta); color: #fff; font-size: 0.6rem; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
 .navbar-toggler { border-color: rgba(255,255,255,0.3); }
 .navbar-toggler-icon { filter: invert(1); }
 
 /* ── Announcement bar ── */
-.announce-bar {
-  background: var(--gl-acacia);
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 500;
-  padding: 7px 0;
-  text-align: center;
-  letter-spacing: 0.03em;
-}
+.announce-bar { background: var(--gl-acacia); color: #fff; font-size: 0.78rem; font-weight: 500; padding: 7px 0; text-align: center; letter-spacing: 0.03em; }
 
 /* ── Hero ── */
-.hero-section {
-  background: linear-gradient(135deg, #D6F0E8 0%, #EEF0F8 55%, #F5F0F7 100%);
-  padding: 80px 0 60px;
-  position: relative;
-  overflow: hidden;
-}
-.hero-section::before {
-  content: '';
-  position: absolute;
-  top: -60px; right: -80px;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(58,175,160,0.12) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.hero-section::after {
-  content: '';
-  position: absolute;
-  bottom: -40px; left: -60px;
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, rgba(199,190,220,0.2) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(27,94,79,0.08);
-  color: var(--gl-primary);
-  border: 1px solid rgba(27,94,79,0.2);
-  border-radius: 20px;
-  padding: 5px 14px;
-  font-size: 0.78rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-  letter-spacing: 0.04em;
-}
-.hero-title {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  font-weight: 700;
-  color: var(--gl-primary);
-  line-height: 1.15;
-  margin-bottom: 18px;
-}
+.hero-section { background: linear-gradient(135deg, #D6F0E8 0%, #EEF0F8 55%, #F5F0F7 100%); padding: 80px 0 60px; position: relative; overflow: hidden; }
+.hero-section::before { content: ''; position: absolute; top: -60px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(58,175,160,0.12) 0%, transparent 70%); border-radius: 50%; }
+.hero-section::after { content: ''; position: absolute; bottom: -40px; left: -60px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(199,190,220,0.2) 0%, transparent 70%); border-radius: 50%; }
+.hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(27,94,79,0.08); color: var(--gl-primary); border: 1px solid rgba(27,94,79,0.2); border-radius: 20px; padding: 5px 14px; font-size: 0.78rem; font-weight: 500; margin-bottom: 20px; letter-spacing: 0.04em; }
+.hero-title { font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 700; color: var(--gl-primary); line-height: 1.15; margin-bottom: 18px; }
 .hero-title span { color: var(--gl-primary-mid); }
-.hero-desc {
-  font-size: 1rem;
-  color: var(--gl-muted);
-  line-height: 1.7;
-  max-width: 480px;
-  margin-bottom: 28px;
-}
-.btn-cta {
-  background: var(--gl-cta);
-  color: #fff;
-  border: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.25s;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
+.hero-desc { font-size: 1rem; color: var(--gl-muted); line-height: 1.7; max-width: 480px; margin-bottom: 28px; }
+.btn-cta { background: var(--gl-cta); color: #fff; border: none; padding: 12px 28px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px; }
 .btn-cta:hover { background: var(--gl-cta-dark); color: #fff; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(232,146,58,0.35); }
-.btn-outline-brand {
-  background: transparent;
-  color: var(--gl-primary);
-  border: 1.5px solid var(--gl-primary);
-  padding: 11px 26px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.25s;
-}
+.btn-outline-brand { background: transparent; color: var(--gl-primary); border: 1.5px solid var(--gl-primary); padding: 11px 26px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: all 0.25s; }
 .btn-outline-brand:hover { background: var(--gl-primary); color: #fff; }
-.hero-stats {
-  display: flex;
-  gap: 32px;
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(27,94,79,0.12);
-}
-.hero-stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--gl-primary);
-}
+.hero-stats { display: flex; gap: 32px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(27,94,79,0.12); }
+.hero-stat-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--gl-primary); }
 .hero-stat-label { font-size: 0.75rem; color: var(--gl-muted); margin-top: 2px; }
-.hero-product-showcase {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 380px;
-}
-.hero-product-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-  animation: float 4s ease-in-out infinite;
-}
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-.hero-pill-card {
-  position: absolute;
-  background: #fff;
-  border-radius: 12px;
-  padding: 10px 14px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-  font-size: 0.8rem;
-  font-weight: 500;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+.hero-product-showcase { position: relative; display: flex; align-items: center; justify-content: center; height: 380px; }
+.hero-product-main { display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; animation: float 4s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.hero-pill-card { position: absolute; background: #fff; border-radius: 12px; padding: 10px 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); font-size: 0.8rem; font-weight: 500; white-space: nowrap; display: flex; align-items: center; gap: 8px; }
 .pill-dot { width: 8px; height: 8px; border-radius: 50%; }
 .pill-1 { top: 40px; left: 10px; }
 .pill-2 { bottom: 80px; left: 0; }
 .pill-3 { top: 60px; right: 10px; }
 .pill-4 { bottom: 60px; right: 0; }
+.hero-product-main img { width: 650px; max-width: 100%; height: auto; display: block; object-fit: contain; background: transparent; }
+.hero-product-showcase { height: auto; min-height: 450px; }
+.hero-product-main::before { content: ""; position: absolute; width: 500px; height: 500px; background: radial-gradient(circle, rgba(58,175,160,0.25), transparent 60%); z-index: -1; }
+.hero-half-circle { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 380px; height: 380px; border-radius: 50%; background: #dff3ee; filter: blur(6px); }
 
-/* ===== TRUST BAR ===== */
-    .trust-bar {
-      background: #FFFFFF;
-      border-top: 1px solid rgba(27, 94, 79, 0.08);
-      border-bottom: 1px solid rgba(27, 94, 79, 0.08);
-      padding: 32px 0;          /* increased vertical padding for breathing space */
-      margin: 0;               /* no extra margin, but clear separation via padding */
-    }
-    /* added extra bottom margin to push best sellers further away */
-    .trust-bar-spacer {
-      margin-bottom: 28px;     /* additional spacing after trust bar */
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 0 12px;
-    }
-    .trust-icon-wrap {
-      width: 46px;
-      height: 46px;
-      background: var(--gl-primary-light);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gl-primary);
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-    .trust-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin: 0;
-      color: var(--gl-text);
-    }
-    .trust-sub {
-      font-size: 0.75rem;
-      color: var(--gl-muted);
-      margin: 0;
-    }
-
+/* ── Trust Bar ── */
+.trust-bar { background: #FFFFFF; border-top: 1px solid rgba(27,94,79,0.08); border-bottom: 1px solid rgba(27,94,79,0.08); padding: 32px 0; }
+.trust-bar-spacer { margin-bottom: 28px; }
+.trust-item { display: flex; align-items: center; gap: 12px; padding: 0 12px; }
+.trust-icon-wrap { width: 46px; height: 46px; background: var(--gl-primary-light); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--gl-primary); font-size: 1.25rem; flex-shrink: 0; }
+.trust-title { font-size: 0.9rem; font-weight: 700; margin: 0; color: var(--gl-text); }
+.trust-sub { font-size: 0.75rem; color: var(--gl-muted); margin: 0; }
 
 /* ── Section styles ── */
-.section-tag {
-  display: inline-block;
-  background: var(--gl-primary-light);
-  color: var(--gl-primary);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 20px;
-  margin-bottom: 10px;
-}
-.section-title {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 700;
-  color: var(--gl-text);
-  margin-bottom: 8px;
-}
+.section-tag { display: inline-block; background: var(--gl-primary-light); color: var(--gl-primary); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--gl-text); margin-bottom: 8px; }
 .section-desc { color: var(--gl-muted); font-size: 0.95rem; max-width: 500px; }
 
-/* ── Product cards ── */
-.product-card {
-  background: var(--gl-card);
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(27,94,79,0.08);
-  transition: all 0.3s;
-  height: 100%;
-}
-.product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(27,94,79,0.12);
-  border-color: rgba(27,94,79,0.15);
-}
-.product-img-wrap {
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  font-size: 3.5rem;
-}
-.product-cat-tag {
-  position: absolute;
-  top: 12px; left: 12px;
-  font-size: 0.65rem;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-}
+/* ── Product cards (Best Sellers) ── */
+.product-card { background: var(--gl-card); border-radius: 16px; overflow: hidden; border: 1px solid rgba(27,94,79,0.08); transition: all 0.3s; height: 100%; cursor: pointer; }
+.product-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(27,94,79,0.12); border-color: rgba(27,94,79,0.15); }
+.product-img-wrap { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; font-size: 3.5rem; }
+.product-cat-tag { position: absolute; top: 12px; left: 12px; font-size: 0.65rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.07em; }
 .tag-food    { background: #EEF5E8; color: #3B6D11; }
 .tag-health  { background: #E1F5EE; color: #0F6E56; }
 .tag-beauty  { background: #EEEDFE; color: #534AB7; }
 .tag-agri    { background: #FFF3E0; color: #BF6000; }
-.product-badge-new {
-  position: absolute;
-  top: 12px; right: 12px;
-  background: var(--gl-cta);
-  color: #fff;
-  font-size: 0.6rem;
-  font-weight: 700;
-  padding: 3px 8px;
-  border-radius: 20px;
-  letter-spacing: 0.05em;
-}
+.product-badge-new { position: absolute; top: 12px; right: 12px; background: var(--gl-cta); color: #fff; font-size: 0.6rem; font-weight: 700; padding: 3px 8px; border-radius: 20px; letter-spacing: 0.05em; }
 .product-body { padding: 16px 18px 18px; }
 .product-name { font-weight: 600; font-size: 0.95rem; color: var(--gl-text); margin-bottom: 4px; }
 .product-desc { font-size: 0.8rem; color: var(--gl-muted); margin-bottom: 12px; line-height: 1.5; }
 .product-price { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--gl-primary); }
-.product-price-old { font-size: 0.8rem; color: #aaa; text-decoration: line-through; margin-left: 6px; }
 .product-rating { font-size: 0.75rem; color: var(--gl-acacia); margin-bottom: 10px; }
 .product-rating span { color: var(--gl-muted); margin-left: 4px; }
-.btn-add-cart {
-  width: 100%;
-  background: var(--gl-primary);
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: all 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-}
-.btn-add-cart:hover { background: var(--gl-primary-mid); color: #fff; }
-.btn-wishlist {
-  background: transparent;
-  border: 1.5px solid rgba(27,94,79,0.2);
-  color: var(--gl-muted);
-  padding: 10px 12px;
-  border-radius: 8px;
-  transition: all 0.2s;
-}
+.btn-add-cart { width: 100%; background: var(--gl-cta); color: #fff; border: none; padding: 10px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.btn-add-cart:hover { background: var(--gl-cta-dark); color: #fff; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(232,146,58,0.4); }
+.btn-wishlist { background: transparent; border: 1.5px solid rgba(27,94,79,0.2); color: var(--gl-muted); padding: 10px 12px; border-radius: 8px; transition: all 0.2s; }
 .btn-wishlist:hover { border-color: var(--gl-cta); color: var(--gl-cta); }
 
-/* ── Category cards ── */
-.cat-card {
-  border-radius: 16px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
-  height: 200px;
-  display: flex;
-  align-items: flex-end;
-  transition: transform 0.3s;
-}
-.cat-card:hover { transform: scale(1.02); }
-.cat-card-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
-}
-.cat-card-body {
-  position: relative;
-  z-index: 1;
-  padding: 18px;
-  color: #fff;
-}
-.cat-card-body h5 { font-size: 1rem; font-weight: 700; margin: 0 0 2px; font-family: 'Playfair Display', serif; }
-.cat-card-body p { font-size: 0.75rem; margin: 0; opacity: 0.85; }
-.cat-food    { background: linear-gradient(135deg, #1B5E4F, #3AAFA0); }
-.cat-health  { background: linear-gradient(135deg, #3AAFA0, #7CC7BD); }
-.cat-beauty  { background: linear-gradient(135deg, #C7BEDC, #9B8EC4); }
-.cat-agri    { background: linear-gradient(135deg, #C4B54A, #E8B84B); }
-.cat-emoji { font-size: 2.8rem; margin-bottom: 8px; display: block; }
+/* ── Ticker ── */
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-/* ── Benefits section ── */
-.benefits-section { background: var(--gl-primary); padding: 70px 0; }
-.benefits-section .section-tag { background: rgba(255,255,255,0.15); color: #fff; }
-.benefits-section .section-title { color: #fff; }
-.benefits-section .section-desc { color: rgba(255,255,255,0.7); }
-.benefit-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 14px;
-  padding: 24px 20px;
-  text-align: center;
-  transition: all 0.3s;
-}
-.benefit-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
-.benefit-icon {
-  width: 56px; height: 56px;
-  background: rgba(255,255,255,0.15);
-  border-radius: 14px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.5rem;
-  margin: 0 auto 14px;
-}
-.benefit-card h6 { color: #fff; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; }
-.benefit-card p { color: rgba(255,255,255,0.65); font-size: 0.8rem; margin: 0; line-height: 1.5; }
-
-/* ── Testimonials ── */
-.testimonial-card {
-  background: var(--gl-card);
-  border-radius: 16px;
-  padding: 24px;
-  border: 1px solid rgba(27,94,79,0.08);
-  height: 100%;
-}
-.testi-stars { color: var(--gl-acacia); font-size: 0.85rem; margin-bottom: 12px; }
-.testi-text { font-size: 0.9rem; color: var(--gl-text); line-height: 1.6; margin-bottom: 16px; font-style: italic; }
-.testi-avatar {
-  width: 38px; height: 38px;
-  border-radius: 50%;
-  background: var(--gl-primary-light);
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700;
-  color: var(--gl-primary);
-  font-size: 0.85rem;
-  flex-shrink: 0;
-}
-.testi-name { font-weight: 600; font-size: 0.85rem; color: var(--gl-text); margin: 0; }
-.testi-loc { font-size: 0.75rem; color: var(--gl-muted); margin: 0; }
-
-/* ── Supplier section ── */
-.supplier-section { background: var(--gl-primary-light); }
-.supplier-img-mock {
-  height: 300px;
-  background: linear-gradient(135deg, #1B5E4F, #3AAFA0);
-  border-radius: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: 5rem;
-  color: rgba(255,255,255,0.6);
-}
-
-/* ── Newsletter ── */
-.newsletter-section { background: linear-gradient(135deg, var(--gl-primary) 0%, var(--gl-primary-mid) 100%); padding: 60px 0; }
-.newsletter-section h2 { color: #fff; }
-.newsletter-section p { color: rgba(255,255,255,0.75); }
-.newsletter-input {
-  border: none;
-  border-radius: 8px;
-  padding: 13px 18px;
-  font-size: 0.9rem;
-  flex: 1;
-  outline: none;
-}
-.newsletter-btn {
-  background: var(--gl-cta);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 13px 24px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  transition: all 0.2s;
-}
-.newsletter-btn:hover { background: var(--gl-cta-dark); }
-
-/* ── Footer ── */
-footer {
-  background: #0D3229;
-  color: rgba(255,255,255,0.75);
-  padding: 56px 0 28px;
-}
-footer h5 {
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 16px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-footer a {
-  color: rgba(255,255,255,0.6);
-  text-decoration: none;
-  font-size: 0.85rem;
-  line-height: 2;
-  transition: color 0.2s;
-}
-footer a:hover { color: #9FE5C8; }
-.footer-brand-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #fff; font-weight: 700; }
-.footer-desc { font-size: 0.82rem; line-height: 1.7; margin: 10px 0 18px; }
-.social-btn {
-  width: 36px; height: 36px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.7);
-  font-size: 1rem;
-  margin-right: 6px;
-  transition: all 0.2s;
-}
-.social-btn:hover { background: var(--gl-primary-mid); color: #fff; }
-.footer-divider { border-color: rgba(255,255,255,0.08); margin: 32px 0 20px; }
-.footer-bottom { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
-
-/* ── Filter tabs ── */
-.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-.filter-tab {
-  padding: 7px 18px;
-  border-radius: 20px;
-  border: 1.5px solid rgba(27,94,79,0.2);
-  background: transparent;
-  color: var(--gl-muted);
-  font-size: 0.82rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.filter-tab:hover, .filter-tab.active {
-  background: var(--gl-primary);
-  color: #fff;
-  border-color: var(--gl-primary);
-}
-
-/* ── Price range display ── */
-.price-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-
-/* ── Scroll animations ── */
-.fade-up {
-  opacity: 1;
-  transform: translateY(0);
-}
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.hero-product-main img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-}
-.hero-product-main {
-    overflow: hidden;
-}
-
-.hero-product-main img {
-  width: 650px;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-  background: transparent;
-  image-rendering: auto;
-}
-.hero-product-showcase {
-  height: auto;
-  min-height: 450px;
-}
-.hero-product-main::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(58,175,160,0.25), transparent 60%);
-  z-index: -1;
-}
-/* BACKGROUND CIRCLE */
-.hero-half-circle {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
-  background: #dff3ee;
-  filter: blur(6px);
-}
-.hero-feature {
-  position: absolute;
-  background: #fff;
-  border-radius: 50px;
-  padding: 8px 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-  z-index: 3;
-}
-
-.hero-feature i {
-  font-size: 0.9rem;
-  color: var(--gl-primary);
-}
-
-/* Positions */
-.feature-1 { top: 20px; left: 40px; }
-.feature-2 { top: 120px; right: 20px; }
-.feature-3 { bottom: 120px; left: 20px; }
-.feature-4 { bottom: 20px; right: 60px; }
-
-/* ── Category Dropdown ── */
+/* ── Category dropdown ── */
 .dropdown-parent { position: relative; }
 .has-dropdown { display: flex !important; align-items: center; gap: 5px; }
-.gl-dropdown {
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-50%) translateY(-6px);
-  width: 560px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-  padding: 20px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s, transform .2s;
-  z-index: 9999;
-}
+.gl-dropdown { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%) translateY(-6px); width: 560px; background: #fff; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); padding: 20px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 9999; }
 .gl-dropdown.open { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
 .gl-dd-arrow { position: absolute; top: -7px; left: 50%; transform: translateX(-50%); width: 14px; height: 7px; overflow: hidden; }
 .gl-dd-arrow::after { content: ''; display: block; width: 14px; height: 14px; background: #fff; border-radius: 2px; transform: rotate(45deg) translate(-3px, 3px); box-shadow: -2px -2px 4px rgba(0,0,0,.06); }
@@ -676,6 +129,7 @@ footer a:hover { color: #9FE5C8; }
 .gl-dd-icon.health{ background: #E1F5EE; }
 .gl-dd-icon.beauty{ background: #EEEDFE; }
 .gl-dd-icon.food  { background: #EEF5E8; }
+.gl-dd-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
 .gl-dd-title { font-weight: 600; font-size: .88rem; color: var(--gl-text); margin-bottom: 2px; }
 .gl-dd-desc  { font-size: .75rem; color: var(--gl-muted); line-height: 1.45; }
 .gl-dd-tag { display: inline-block; font-size: .6rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; padding: 2px 8px; border-radius: 20px; margin-top: 5px; }
@@ -684,280 +138,1113 @@ footer a:hover { color: #9FE5C8; }
 .gl-dd-btn { background: var(--gl-primary); color: #fff; padding: 7px 16px; border-radius: 8px; font-size: .8rem; font-weight: 600; text-decoration: none; transition: .2s; }
 .gl-dd-btn:hover { background: var(--gl-primary-mid); color: #fff; }
 
-.gl-dd-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 10px;
-}
-@keyframes ticker {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-/* ----- THE ADD TO CART BUTTON COLOR IS SET TO #E8923A & HOVER EFFECTS ----- */
-    .btn-add-cart {
-      width: 100%;
-      background: #E8923A;          /* <-- requested color #E8923A */
-      color: #fff;
-      border: none;
-      padding: 10px;
-      border-radius: 8px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: all 0.2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .btn-add-cart:hover {
-      background: #C4721E;          /* deeper orange for hover */
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(232, 146, 58, 0.4);
-      color: #fff;
-    }
+/* ── Pages ── */
+.page { display: none; }
+.page.active { display: block; }
 
+/* ── Breadcrumb ── */
+.breadcrumb-bar { padding: 14px 24px; font-size: 0.78rem; color: #5A7268; display: flex; align-items: center; gap: 8px; background: #fff; border-bottom: 1px solid rgba(47,63,46,0.08); }
+.breadcrumb-bar span { cursor: pointer; }
+.breadcrumb-bar span:hover { color: #2F3F2E; }
+.breadcrumb-bar .current { color: #2F3F2E; font-weight: 600; }
+
+/* ── Detail layout ── */
+.detail-body { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 32px 24px; max-width: 1100px; margin: 0 auto; }
+@media(max-width:700px) { .detail-body { grid-template-columns: 1fr; } }
+
+/* ── Gallery ── */
+.gallery { display: flex; flex-direction: column; gap: 12px; }
+.main-img-box { background: #f4f2ee; border-radius: 16px; border: 1px solid rgba(47,63,46,0.08); height: 380px; display: flex; align-items: center; justify-content: center; position: relative; font-size: 6rem; }
+.thumb-row { display: flex; gap: 10px; }
+.thumb { width: 72px; height: 72px; background: #f4f2ee; border-radius: 10px; border: 2px solid transparent; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; transition: all 0.18s; }
+.thumb:hover, .thumb.active { border-color: #2F3F2E; }
+
+/* ── Detail info ── */
+.detail-info { display: flex; flex-direction: column; gap: 16px; }
+.detail-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #1A2E28; line-height: 1.2; }
+.rating-row { display: flex; align-items: center; gap: 10px; }
+.stars-big { color: #C4B54A; font-size: 1rem; }
+.rating-num { font-size: 0.85rem; color: #5A7268; }
+.rating-count { font-size: 0.85rem; color: #5A7268; }
+.price-row { display: flex; align-items: baseline; gap: 10px; }
+.detail-price { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #2F3F2E; }
+.detail-price-old { font-size: 1rem; color: #aaa; text-decoration: line-through; }
+.save-badge { font-size: 0.72rem; font-weight: 700; background: #EEF5E8; color: #3B6D11; padding: 3px 10px; border-radius: 20px; }
+.detail-short-desc { font-size: 0.9rem; color: #5A7268; line-height: 1.75; }
+.chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { display: flex; align-items: center; gap: 6px; background: #fff; border: 1px solid rgba(47,63,46,0.12); border-radius: 8px; padding: 6px 12px; font-size: 0.78rem; font-weight: 500; color: #1A2E28; }
+.divider { border: none; border-top: 1px solid rgba(47,63,46,0.08); }
+.qty-row { display: flex; align-items: center; gap: 12px; }
+.qty-label { font-size: 0.88rem; font-weight: 600; }
+.qty-ctrl { display: flex; align-items: center; border: 1.5px solid rgba(47,63,46,0.2); border-radius: 10px; overflow: hidden; }
+.qty-btn { width: 36px; height: 36px; background: transparent; border: none; font-size: 1.1rem; font-weight: 600; cursor: pointer; color: #2F3F2E; }
+.qty-btn:hover { background: #D6F0E8; }
+.qty-val { width: 44px; text-align: center; font-weight: 600; font-size: 0.95rem; border-left: 1px solid rgba(47,63,46,0.15); border-right: 1px solid rgba(47,63,46,0.15); line-height: 36px; }
+.stock-label { font-size: 0.78rem; color: #5A7268; }
+.action-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-add-main { flex: 1; background: linear-gradient(105deg, #E8923A 0%, #F4A261 100%); color: #fff; border: none; padding: 13px 20px; border-radius: 10px; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.22s ease; font-family: 'DM Sans', sans-serif; box-shadow: 0 4px 12px rgba(232,146,58,0.25); }
+.btn-add-main:hover { background: linear-gradient(105deg, #D47B2A 0%, #E8923A 100%); transform: translateY(-2px); box-shadow: 0 10px 22px rgba(232,146,58,0.35); color: #fff; }
+.btn-buynow { background: linear-gradient(105deg, #1B5E4F 0%, #3AAFA0 100%); color: #fff; border: none; padding: 13px 20px; border-radius: 10px; font-size: 0.9rem; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.22s ease; box-shadow: 0 4px 12px rgba(27,94,79,0.22); }
+.btn-buynow:hover { background: linear-gradient(105deg, #143F36 0%, #2D988B 100%); transform: translateY(-2px); box-shadow: 0 10px 22px rgba(27,94,79,0.32); color: #fff; }
+.btn-wish-main { background: transparent; border: 1.5px solid rgba(47,63,46,0.2); color: #5A7268; padding: 13px 14px; border-radius: 10px; cursor: pointer; font-size: 1.1rem; transition: all 0.2s; }
+.btn-wish-main:hover { border-color: #E8923A; color: #E8923A; }
+.delivery-box { background: #fff; border: 1px solid rgba(47,63,46,0.1); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+.delivery-row { display: flex; align-items: center; gap: 12px; font-size: 0.82rem; }
+.d-icon { width: 32px; height: 32px; background: #D6F0E8; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+.d-title { font-weight: 600; color: #1A2E28; }
+.d-sub { font-size: 0.75rem; color: #5A7268; }
+
+/* ── Tabs ── */
+.tabs-bar { display: flex; border-bottom: 1px solid rgba(47,63,46,0.1); padding: 0 24px; background: #fff; }
+.tab-btn { padding: 14px 20px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500; color: #5A7268; background: none; border: none; border-bottom: 2.5px solid transparent; cursor: pointer; margin-bottom: -1px; transition: all 0.18s; }
+.tab-btn:hover { color: #2F3F2E; }
+.tab-btn.active { color: #2F3F2E; border-bottom-color: #2F3F2E; font-weight: 600; }
+.tab-content { display: none; padding: 28px 24px; max-width: 900px; margin: 0 auto; }
+.tab-content.active { display: block; }
+.ing-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.ing-table th { text-align: left; padding: 10px 14px; background: #D6F0E8; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: #1A2E28; }
+.ing-table td { padding: 10px 14px; border-bottom: 1px solid rgba(47,63,46,0.07); color: #5A7268; }
+.ing-table tr:last-child td { border-bottom: none; }
+.ing-table tr:hover td { background: #f9faf8; }
+.rev-summary { display: flex; gap: 28px; align-items: center; margin-bottom: 24px; }
+.big-rating { text-align: center; }
+.big-num { font-family: 'Playfair Display', serif; font-size: 3.5rem; font-weight: 700; color: #2F3F2E; line-height: 1; }
+.big-stars { color: #C4B54A; font-size: 1.1rem; margin: 4px 0; }
+.big-count { font-size: 0.78rem; color: #5A7268; }
+.rating-bars { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.rbar-row { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: #5A7268; }
+.rbar-lbl { width: 28px; text-align: right; }
+.rbar-track { flex: 1; height: 6px; background: rgba(47,63,46,0.1); border-radius: 3px; overflow: hidden; }
+.rbar-fill { height: 100%; background: #C4B54A; border-radius: 3px; }
+.review-card { background: #fff; border: 1px solid rgba(47,63,46,0.08); border-radius: 12px; padding: 18px; margin-bottom: 12px; }
+.rev-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.rev-avatar { width: 36px; height: 36px; border-radius: 50%; background: #D6F0E8; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; color: #2F3F2E; }
+.rev-name { font-weight: 600; font-size: 0.88rem; }
+.rev-date { font-size: 0.73rem; color: #5A7268; }
+.rev-stars { color: #C4B54A; font-size: 0.8rem; margin-bottom: 6px; }
+.rev-text { font-size: 0.85rem; color: #1A2E28; line-height: 1.6; }
+.verified { display: inline-flex; align-items: center; gap: 4px; font-size: 0.7rem; color: #0F6E56; background: #E1F5EE; padding: 2px 8px; border-radius: 20px; margin-top: 8px; }
+
+/* ── Toast ── */
+.toast-custom { position: fixed; bottom: 24px; right: 24px; background: #2F3F2E; color: #fff; padding: 12px 20px; border-radius: 12px; font-size: 0.85rem; font-weight: 500; display: flex; align-items: center; gap: 8px; box-shadow: 0 8px 24px rgba(47,63,46,0.3); z-index: 9999; transform: translateY(80px); opacity: 0; transition: all 0.3s ease; }
+.toast-custom.show { transform: translateY(0); opacity: 1; }
+
+/* ── All Products page ── */
+.all-products-page { background: #F7F5F1; padding-bottom: 28px; }
+.all-products-header { text-align: center; padding: 12px 0 18px; }
+.all-products-header h1 { font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1; margin: 0; color: #3A3731; }
+.all-products-header p { margin: 6px 0 8px; font-size: .9rem; color: #3A3731; }
+.leaf-mark { color: var(--gl-accent); font-size: 1.45rem; vertical-align: top; }
+.title-rule { width: 84px; height: 2px; background: var(--gl-accent); margin: 10px auto 0; }
+.products-shell { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 42px; align-items: start; }
+.filter-panel { background: #ECE8E8; border-radius: 18px; padding: 20px 24px; min-height: 410px; }
+.filter-panel h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 14px; }
+.category-btn { width: 100%; border: 0; background: transparent; color: #4D4D4D; min-height: 33px; padding: 7px 10px; border-radius: 8px; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: .92rem; margin-bottom: 5px; text-align: left; }
+.category-btn span { display: flex; align-items: center; gap: 9px; }
+.category-btn.active { background: var(--gl-primary); color: #fff; }
+.category-divider { border: 0; border-top: 1px solid rgba(47,63,46,.25); margin: 20px 0 12px; }
+.price-title { font-family: "Playfair Display", serif; font-size: 1.35rem; font-weight: 700; }
+.price-values { display: flex; justify-content: space-between; font-size: .75rem; font-weight: 700; margin: 8px 0 4px; }
+.price-range { width: 100%; accent-color: var(--gl-primary); }
+.filter-promo { margin-top: 14px; border-radius: 14px; min-height: 128px; padding: 16px 12px; background: linear-gradient(105deg, rgba(246,244,240,.96), rgba(246,244,240,.64)), radial-gradient(circle at 90% 72%, rgba(154,195,58,.35), transparent 34%); overflow: hidden; }
+.filter-promo strong { display: block; font-size: .95rem; line-height: 1.15; margin-bottom: 22px; }
+.filter-promo small { display: block; max-width: 120px; color: #4D4D4D; line-height: 1.35; }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+.all-product-card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(47,63,46,.12); }
+.all-product-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.fallback-img { font-size: 2.6rem; line-height: 1; z-index: 0; }
+
+/* ── cat-tag inside detail ── */
+.cat-tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
 </style>
 </head>
 <body>
-    <!--Annaouncement bar-->
-    <div class="announce-bar">
-  🌿 Free shipping on orders above RM80 &nbsp;·&nbsp; Use code <strong>GREENLEAF10</strong> for 10% off your first order &nbsp;·&nbsp; New Beauty Series now available!
+
+<!-- ── Toast ── -->
+<div class="toast-custom" id="toast">
+  <span>✓</span>
+  <span id="toast-msg">Added to cart!</span>
 </div>
 
-    <nav class="navbar navbar-main navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <span class="navbar-brand-text"></span>
-                <span class="navbar-brand-sub"></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navMain">
-              <ul class="navbar-nav mx-auto gap-1">
-                <li class="nav-item"><a class="nav-link">Products</a></li>
-<li class="nav-item dropdown-parent">
-  <a class="nav-link has-dropdown" id="cat-trigger">
-    Categories
-    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" id="cat-caret" style="transition:transform .25s">
-      <path d="M2.5 4.5L6 8L9.5 4.5" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </a>
+<!-- ═══════════════════════════════════════════
+     PAGE: LISTING (Home)
+════════════════════════════════════════════ -->
+<div class="page active" id="page-listing">
 
-  <div class="gl-dropdown" id="cat-dropdown">
-    <div class="gl-dd-arrow"></div>
-    <div class="gl-dd-header">Browse by Category</div>
-    <div class="gl-dd-grid">
-
-      <div class="gl-dd-card">
-        <div class="gl-dd-icon agri">
-            <img src="image/agri.png" alt="Agriculture">
-        </div>
-        <div>
-          <div class="gl-dd-title">Agriculture & Farming</div>
-          <div class="gl-dd-desc">Organic fertilisers, soil enhancers from kangkung extract</div>
-          <span class="gl-dd-tag tag-agri">Agri</span>
-        </div>
-      </div>
-
-      <div class="gl-dd-card">
-       <div class="gl-dd-icon health">
-        <img src="image/health.png" alt="Healthcare">
-        </div>
-        <div>
-          <div class="gl-dd-title">Healthcare & Wellness</div>
-          <div class="gl-dd-desc">Supplements, herbal capsules & wellness teas packed with kangkung nutrients</div>
-          <span class="gl-dd-tag tag-health">Health</span>
-        </div>
-      </div>
-
-      <div class="gl-dd-card">
-        <div class="gl-dd-icon beauty">
-        <img src="image/skincare.png" alt="Beauty">
-            </div>
-
-        <div>
-          <div class="gl-dd-title">Beauty & Skincare</div>
-          <div class="gl-dd-desc">Serums, face masks & cleansers infused with antioxidant-rich kangkung essence</div>
-          <span class="gl-dd-tag tag-beauty">Beauty</span>
-        </div>
-      </div>
-
-      <div class="gl-dd-card">
-       <div class="gl-dd-icon food">
-        <img src="image/food.png" alt="Food">
-        </div>
-        <div>
-          <div class="gl-dd-title">Food & Beverage</div>
-          <div class="gl-dd-desc">Ready-to-eat kimchi, dried chips & functional beverages</div>
-          <span class="gl-dd-tag tag-food">Food</span>
-        </div>
-      </div>
-
-    </div>
-    <div class="gl-dd-footer">
-      <span class="gl-dd-footer-text">10 product lines across 4 categories</span>
-      <a href="#" class="gl-dd-btn">View All Products →</a>
-    </div>
+  <!-- Announcement bar -->
+  <div class="announce-bar">
+    🌿 Free shipping on orders above RM80 &nbsp;·&nbsp; Use code <strong>GREENLEAF10</strong> for 10% off your first order &nbsp;·&nbsp; New Beauty Series now available!
   </div>
-</li>                <li class="nav-item"><a class="nav-link">Health Benefits</a></li>
-                <li class="nav-item"><a class="nav-link">About Us</a></li>
-                <li class="nav-item"><a class="nav-link">Blog</a></li>
-                <li class="nav-item"><a class="nav-link">Contact</a></li>
-            </ul>
-            <div class="d-flex align-items-center gap-2">
-                <button class="navbar-icon-btn"><i class="bi bi-search"></i></button>
-                <button class="navbar-icon-btn"><i class="bi bi-person"></i></button>
-                <button class="navbar-icon-btn position-relative">
-                    <i class="bi bi-bag"></i>
-                    <span class="cart-badge">2</span>
-                </button>
-            </div>
-            </div>
-        </div>
-    </nav>
 
-<!-- Hero section -->
-<section class="hero-section">
+  <!-- Navbar -->
+  <nav class="navbar navbar-main navbar-expand-lg">
     <div class="container">
-        <div class="row align-items-center">
-
-            <!-- Left content -->
-            <div class="col-lg-6 fade-up">
-
-                <span class="hero-badge">
-                    <i class="bi bi-patch-check-fill"></i>
-                    100% Natural · Made in Malaysia
-                </span>
-
-                <h1 class="hero-title">
-                    Natural Innovation From
-                    <span>Water Spinach</span>
-                </h1>
-
-                <p class="hero-desc">
-                    Discover premium kangkung-based products spanning food,
-                    health, beauty and agriculture — sustainably grown in Kedah,
-                    chemical-free, and crafted for modern living.
-                </p>
-
-                <div class="d-flex gap-3 flex-wrap">
-                    <a href="#" class="btn-cta">
-                        Explore Products
-                        <i class="bi bi-arrow-right"></i>
-                    </a>
-
-                    <a href="#" class="btn-outline-brand">
-                        Learn More
-                    </a>
+      <a class="navbar-brand" href="#">
+        <span class="navbar-brand-text">GreenLeaf Ventures</span>
+        <span class="navbar-brand-sub">Natural · Sustainable · Malaysian</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav mx-auto gap-1">
+          <li class="nav-item"><a class="nav-link" href="#" onclick="event.preventDefault();">Products</a></li>
+          <li class="nav-item dropdown-parent">
+            <a class="nav-link has-dropdown" id="cat-trigger" href="#">
+              Categories
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" id="cat-caret" style="transition:transform .25s">
+                <path d="M2.5 4.5L6 8L9.5 4.5" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div class="gl-dropdown" id="cat-dropdown">
+              <div class="gl-dd-arrow"></div>
+              <div class="gl-dd-header">Browse by Category</div>
+              <div class="gl-dd-grid">
+                <div class="gl-dd-card">
+                  <div class="gl-dd-icon agri"><img src="image/agri.png" alt="Agriculture"></div>
+                  <div>
+                    <div class="gl-dd-title">Agriculture & Farming</div>
+                    <div class="gl-dd-desc">Organic fertilisers, soil enhancers from kangkung extract</div>
+                    <span class="gl-dd-tag tag-agri">Agri</span>
+                  </div>
                 </div>
-
-                <div class="hero-stats">
-                    <div>
-                        <div class="hero-stat-num">500+</div>
-                        <div class="hero-stat-label">Happy Customers</div>
-                    </div>
-
-                    <div>
-                        <div class="hero-stat-num">12</div>
-                        <div class="hero-stat-label">Product Lines</div>
-                    </div>
-
-                    <div>
-                        <div class="hero-stat-num">4.8★</div>
-                        <div class="hero-stat-label">Average Rating</div>
-                    </div>
+                <div class="gl-dd-card">
+                  <div class="gl-dd-icon health"><img src="image/health.png" alt="Healthcare"></div>
+                  <div>
+                    <div class="gl-dd-title">Healthcare & Wellness</div>
+                    <div class="gl-dd-desc">Supplements, herbal capsules & wellness teas packed with kangkung nutrients</div>
+                    <span class="gl-dd-tag tag-health">Health</span>
+                  </div>
                 </div>
+                <div class="gl-dd-card">
+                  <div class="gl-dd-icon beauty"><img src="image/skincare.png" alt="Beauty"></div>
+                  <div>
+                    <div class="gl-dd-title">Beauty & Skincare</div>
+                    <div class="gl-dd-desc">Serums, face masks & cleansers infused with antioxidant-rich kangkung essence</div>
+                    <span class="gl-dd-tag tag-beauty">Beauty</span>
+                  </div>
+                </div>
+                <div class="gl-dd-card">
+                  <div class="gl-dd-icon food"><img src="image/food.png" alt="Food"></div>
+                  <div>
+                    <div class="gl-dd-title">Food & Beverage</div>
+                    <div class="gl-dd-desc">Ready-to-eat kimchi, dried chips & functional beverages</div>
+                    <span class="gl-dd-tag tag-food">Food</span>
+                  </div>
+                </div>
+              </div>
+              <div class="gl-dd-footer">
+                <span class="gl-dd-footer-text">10 product lines across 4 categories</span>
+                <a href="#" class="gl-dd-btn" onclick="event.preventDefault(); showPage('all');">View All Products →</a>
+              </div>
             </div>
-            <div class="hero-half-circle"></div>
-            
-
-            <!-- Right content -->
-            <div class="col-lg-6 d-none d-lg-block fade-up">
-
-                <div class="hero-product-showcase">
-
-                    <div class="hero-product-main">
-                    <img src="image/product.png">                    
-                </div>
-
-                    <div class="hero-pill-card pill-1">
-                        <div class="pill-dot" style="background:#1B5E4F;"></div>
-                        Rich in antioxidants
-                    </div>
-
-                    <div class="hero-pill-card pill-2">
-                        <div class="pill-dot" style="background:#C4B54A;"></div>
-                        Vitamin A &amp; C
-                    </div>
-
-                    <div class="hero-pill-card pill-3">
-                        <div class="pill-dot" style="background:#E8923A;"></div>
-                        Chemical Free
-                    </div>
-
-                    <div class="hero-pill-card pill-4">
-                        <div class="pill-dot" style="background:#C7BEDC;"></div>
-                        Skin Soothing
-                    </div>
-
-                </div>
-            </div>
-
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Health Benefits</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <button class="navbar-icon-btn"><i class="bi bi-search"></i></button>
+          <button class="navbar-icon-btn"><i class="bi bi-person"></i></button>
+          <button class="navbar-icon-btn position-relative">
+            <i class="bi bi-bag"></i>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
         </div>
+      </div>
     </div>
-</section>
+  </nav>
 
-<!-- Trust Bar -->
-<section class="trust-bar">
-  <div class="container">
-    <div class="row g-3 justify-content-center">
-      <div class="col-6 col-md-3">
-        <div class="trust-item">
-          <div class="trust-icon-wrap"><i class="bi bi-leaf"></i></div>
-          <div>
-            <p class="trust-title">Natural &amp; Organic</p>
-            <p class="trust-sub">Less than 5% chemical usage</p>
+  <!-- Hero -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <span class="hero-badge"><i class="bi bi-patch-check-fill"></i> 100% Natural · Made in Malaysia</span>
+          <h1 class="hero-title">Natural Innovation From <span>Water Spinach</span></h1>
+          <p class="hero-desc">Discover premium kangkung-based products spanning food, health, beauty and agriculture — sustainably grown in Kedah, chemical-free, and crafted for modern living.</p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="#" class="btn-cta" onclick="event.preventDefault(); showPage('all');">Explore Products <i class="bi bi-arrow-right"></i></a>
+            <a href="#" class="btn-outline-brand">Learn More</a>
+          </div>
+          <div class="hero-stats">
+            <div><div class="hero-stat-num">500+</div><div class="hero-stat-label">Happy Customers</div></div>
+            <div><div class="hero-stat-num">12</div><div class="hero-stat-label">Product Lines</div></div>
+            <div><div class="hero-stat-num">4.8★</div><div class="hero-stat-label">Average Rating</div></div>
+          </div>
+        </div>
+        <div class="hero-half-circle"></div>
+        <div class="col-lg-6 d-none d-lg-block">
+          <div class="hero-product-showcase">
+            <div class="hero-product-main">
+              <img src="image/product.png" alt="GreenLeaf Product">
+            </div>
+            <div class="hero-pill-card pill-1"><div class="pill-dot" style="background:#1B5E4F;"></div>Rich in antioxidants</div>
+            <div class="hero-pill-card pill-2"><div class="pill-dot" style="background:#C4B54A;"></div>Vitamin A &amp; C</div>
+            <div class="hero-pill-card pill-3"><div class="pill-dot" style="background:#E8923A;"></div>Chemical Free</div>
+            <div class="hero-pill-card pill-4"><div class="pill-dot" style="background:#C7BEDC;"></div>Skin Soothing</div>
           </div>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="trust-item">
-          <div class="trust-icon-wrap"><i class="bi bi-grid"></i></div>
-          <div>
-            <p class="trust-title">Multi-Industry</p>
-            <p class="trust-sub">Food, Health, Beauty &amp; Agri</p>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="trust-item">
+            <div class="trust-icon-wrap"><i class="bi bi-leaf"></i></div>
+            <div><p class="trust-title">Natural &amp; Organic</p><p class="trust-sub">Less than 5% chemical usage</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trust-item">
+            <div class="trust-icon-wrap"><i class="bi bi-grid"></i></div>
+            <div><p class="trust-title">Multi-Industry</p><p class="trust-sub">Food, Health, Beauty &amp; Agri</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trust-item">
+            <div class="trust-icon-wrap"><i class="bi bi-geo-alt"></i></div>
+            <div><p class="trust-title">Local Malaysian</p><p class="trust-sub">Supporting local farmers</p></div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trust-item">
+            <div class="trust-icon-wrap"><i class="bi bi-recycle"></i></div>
+            <div><p class="trust-title">Eco-Friendly</p><p class="trust-sub">Sustainable packaging</p></div>
           </div>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="trust-item">
-          <div class="trust-icon-wrap"><i class="bi bi-geo-alt"></i></div>
-          <div>
-            <p class="trust-title">Local Malaysian</p>
-            <p class="trust-sub">Supporting local farmers</p>
+    </div>
+    <div class="trust-bar-spacer"></div>
+  </section>
+
+  <!-- Best Sellers -->
+  <section style="background: #F6F4F0; padding: 70px 0;">
+    <div class="container">
+      <div class="d-flex align-items-start justify-content-between mb-5 flex-wrap gap-3">
+        <div>
+          <span class="section-tag">Top Picks</span>
+          <h2 class="section-title">Our Best Sellers Products</h2>
+          <p class="section-desc">Discover our most loved natural products</p>
+        </div>
+        <a href="#" class="btn-outline-brand" style="white-space:nowrap; align-self:flex-end;" onclick="event.preventDefault(); showPage('all');">View all products</a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card: Agriculture -->
+        <div class="col-6 col-lg-3">
+          <div class="product-card" onclick="showPage('detail', 2)">
+            <div class="product-img-wrap" style="background:#f0f0eb; height:220px;">
+              <span class="product-cat-tag tag-agri">Agriculture</span>
+              <img src="image/foliarFertiliser.jpeg" alt="Water Spinach Foliar Fertiliser Spray" style="width:100%; height:100%; object-fit:contain; padding:16px;">
+            </div>
+            <div class="product-body">
+              <div class="product-name">Water Spinach Foliar Fertiliser Spray</div>
+              <div class="product-desc">Liquid Plant Nutrient Booster | Fast Absorption for Leaf Growth & Higher Yield</div>
+              <div class="product-rating">★★★★★ <span>(4.9)</span></div>
+              <div class="d-flex align-items-center justify-content-between mb-3"><span class="product-price">RM 36.00</span></div>
+              <div class="d-flex gap-2">
+                <button class="btn-add-cart flex-grow-1" onclick="event.stopPropagation(); addToCart(2);"><i class="bi bi-bag-plus"></i> Add to Cart</button>
+                <button class="btn-wishlist" onclick="event.stopPropagation(); toggleWishBtn(this);"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Healthcare -->
+        <div class="col-6 col-lg-3">
+          <div class="product-card" onclick="showPage('detail', 3)">
+            <div class="product-img-wrap" style="background:#f0f0eb; height:220px;">
+              <span class="product-cat-tag tag-health">Healthcare</span>
+              <span class="product-badge-new">NEW</span>
+              <img src="image/capsule.jpeg" alt="Water Spinach Extract Capsules" style="width:100%; height:100%; object-fit:contain; padding:16px;">
+            </div>
+            <div class="product-body">
+              <div class="product-name">Water Spinach Extract Capsules</div>
+              <div class="product-desc">Water Spinach Supplement | Antioxidant, Detox & Digestive Support</div>
+              <div class="product-rating">★★★★★ <span>(4.8)</span></div>
+              <div class="d-flex align-items-center justify-content-between mb-3"><span class="product-price">RM 30.00</span></div>
+              <div class="d-flex gap-2">
+                <button class="btn-add-cart flex-grow-1" onclick="event.stopPropagation(); addToCart(3);"><i class="bi bi-bag-plus"></i> Add to Cart</button>
+                <button class="btn-wishlist" onclick="event.stopPropagation(); toggleWishBtn(this);"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Beauty (Face Mask) -->
+        <div class="col-6 col-lg-3">
+          <div class="product-card" onclick="showPage('detail', 4)">
+            <div class="product-img-wrap" style="background:#f0f0eb; height:220px;">
+              <span class="product-cat-tag tag-beauty">Beauty</span>
+              <img src="image/facemask.jpeg" alt="Water Spinach Face Mask" style="width:100%; height:100%; object-fit:contain; padding:16px;">
+            </div>
+            <div class="product-body">
+              <div class="product-name">Water Spinach Face Mask</div>
+              <div class="product-desc">Dark Circle & Puffiness Care | Hydrating, Brightening & Anti-Fatigue</div>
+              <div class="product-rating">★★★★★ <span>(4.7)</span></div>
+              <div class="d-flex align-items-center justify-content-between mb-3"><span class="product-price">RM 31.00</span></div>
+              <div class="d-flex gap-2">
+                <button class="btn-add-cart flex-grow-1" onclick="event.stopPropagation(); addToCart(4);"><i class="bi bi-bag-plus"></i> Add to Cart</button>
+                <button class="btn-wishlist" onclick="event.stopPropagation(); toggleWishBtn(this);"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card: Beauty (Soothing Gel) -->
+        <div class="col-6 col-lg-3">
+          <div class="product-card" onclick="showPage('detail', 5)">
+            <div class="product-img-wrap" style="background:#f0f0eb; height:220px;">
+              <span class="product-cat-tag tag-beauty">Beauty</span>
+              <img src="image/soothingGel.jpeg" alt="Water Spinach Soothing Gel" style="width:100%; height:100%; object-fit:contain; padding:16px;">
+            </div>
+            <div class="product-body">
+              <div class="product-name">Water Spinach Soothing Gel</div>
+              <div class="product-desc">Hydrating & Cooling Skin Gel | Moisturizing, Calming & Refreshing</div>
+              <div class="product-rating">★★★★☆ <span>(4.6)</span></div>
+              <div class="d-flex align-items-center justify-content-between mb-3"><span class="product-price">RM 20.00</span></div>
+              <div class="d-flex gap-2">
+                <button class="btn-add-cart flex-grow-1" onclick="event.stopPropagation(); addToCart(5);"><i class="bi bi-bag-plus"></i> Add to Cart</button>
+                <button class="btn-wishlist" onclick="event.stopPropagation(); toggleWishBtn(this);"><i class="bi bi-heart"></i></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-6 col-md-3">
-        <div class="trust-item">
-          <div class="trust-icon-wrap"><i class="bi bi-recycle"></i></div>
-          <div>
-            <p class="trust-title">Eco-Friendly</p>
-            <p class="trust-sub">Sustainable packaging</p>
-          </div>
+    </div>
+
+    <!-- Scrolling ticker -->
+    <div style="background:#2F3F2E; margin-top:56px; padding:14px 0; overflow:hidden; white-space:nowrap;">
+      <div style="display:inline-block; animation:ticker 18s linear infinite;">
+        <span style="color:#fff;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;margin:0 32px;">Agriculture</span>
+        <span style="color:#C4B54A;font-size:0.6rem;">◆</span>
+        <span style="color:#fff;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;margin:0 32px;">Beauty Care</span>
+        <span style="color:#C4B54A;font-size:0.6rem;">◆</span>
+        <span style="color:#fff;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;margin:0 32px;">Food</span>
+        <span style="color:#C4B54A;font-size:0.6rem;">◆</span>
+        <span style="color:#fff;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;margin:0 32px;">Healthcare</span>
+        <span style="color:#C4B54A;font-size:0.6rem;">◆</span>
+        <span style="color:#fff;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;margin:0 32px;">Agriculture</span>
+        <span style="color:#C4B54A;font-size:0.6rem;">◆</span>
+        <span style="color:#fff;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;margin:0 32px;">Beauty Care</span>
+        <span style="color:#C4B54A;font-size:0.6rem;">◆</span>
+        <span style="color:#fff;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;margin:0 32px;">Food</span>
+        <span style="color:#C4B54A;font-size:0.6rem;">◆</span>
+        <span style="color:#fff;font-size:0.85rem;font-weight:600;letter-spacing:0.08em;margin:0 32px;">Healthcare</span>
+        <span style="color:#C4B54A;font-size:0.6rem;">◆</span>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end #page-listing -->
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: ALL PRODUCTS
+════════════════════════════════════════════ -->
+<div class="page all-products-page" id="page-all">
+
+  <!-- Navbar (repeated for this page) -->
+  <div class="announce-bar">
+    🌿 Free shipping on orders above RM80 &nbsp;·&nbsp; Use code <strong>GREENLEAF10</strong> for 10% off
+  </div>
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#" onclick="event.preventDefault(); showPage('listing');">
+        <span class="navbar-brand-text">GreenLeaf Ventures</span>
+        <span class="navbar-brand-sub">Natural · Sustainable · Malaysian</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <button class="navbar-icon-btn"><i class="bi bi-search"></i></button>
+        <button class="navbar-icon-btn"><i class="bi bi-person"></i></button>
+        <button class="navbar-icon-btn position-relative">
+          <i class="bi bi-bag"></i>
+          <span class="cart-badge" id="cart-count-all">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-bar">
+    <span onclick="showPage('listing')">Home</span>
+    <span class="sep">›</span>
+    <span class="current">All Products</span>
+  </div>
+
+  <section class="all-products-header">
+    <h1>All Products <span class="leaf-mark">🍃</span></h1>
+    <p>Pure ingredients. Real benefits. Naturally for you</p>
+    <div class="title-rule"></div>
+  </section>
+
+  <section class="container">
+    <div class="products-shell">
+      <aside class="filter-panel">
+        <h2>Category</h2>
+        <button class="category-btn active" onclick="setFilter('all', this)"><span><i class="bi bi-grid"></i> All Products</span><i class="bi bi-chevron-right"></i></button>
+        <button class="category-btn" onclick="setFilter('food', this)"><span><i class="bi bi-flower1"></i> Food Product</span></button>
+        <button class="category-btn" onclick="setFilter('health', this)"><span><i class="bi bi-heart-pulse-fill"></i> Health Product</span></button>
+        <button class="category-btn" onclick="setFilter('beauty', this)"><span><i class="bi bi-stars"></i> Beauty & Skincare</span></button>
+        <button class="category-btn" onclick="setFilter('agri', this)"><span><i class="bi bi-feather"></i> Agriculture</span></button>
+        <hr class="category-divider"/>
+        <div class="price-title">Price</div>
+        <div class="price-values"><span>RM 1</span><span id="price-label">RM 50</span></div>
+        <input class="price-range" type="range" min="1" max="50" value="50" oninput="setMaxPrice(this.value)"/>
+        <div class="filter-promo">
+          <strong>Good for you,<br/>Good for nature</strong>
+          <small>Choose natural, live better</small>
+        </div>
+      </aside>
+      <div class="products-grid" id="all-products-grid"></div>
+    </div>
+  </section>
+</div><!-- end #page-all -->
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: PRODUCT DETAIL
+════════════════════════════════════════════ -->
+<div class="page" id="page-detail">
+
+  <!-- Navbar -->
+  <div class="announce-bar">
+    🌿 Free shipping on orders above RM80 &nbsp;·&nbsp; Use code <strong>GREENLEAF10</strong> for 10% off
+  </div>
+  <nav class="navbar navbar-main navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#" onclick="event.preventDefault(); showPage('listing');">
+        <span class="navbar-brand-text">GreenLeaf Ventures</span>
+        <span class="navbar-brand-sub">Natural · Sustainable · Malaysian</span>
+      </a>
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <button class="navbar-icon-btn"><i class="bi bi-search"></i></button>
+        <button class="navbar-icon-btn"><i class="bi bi-person"></i></button>
+        <button class="navbar-icon-btn position-relative">
+          <i class="bi bi-bag"></i>
+          <span class="cart-badge" id="cart-count-detail">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-bar">
+    <span onclick="showPage('listing')">Home</span>
+    <span class="sep">›</span>
+    <span onclick="showPage('all')">Products</span>
+    <span class="sep">›</span>
+    <span class="current" id="bc-name">Product</span>
+  </div>
+
+  <div class="detail-body">
+    <!-- Gallery -->
+    <div class="gallery">
+      <div class="main-img-box">
+        <span id="main-img-emoji" style="font-size:6rem;">🌿</span>
+        <span id="detail-badge-new"></span>
+      </div>
+      <div class="thumb-row" id="thumb-row"></div>
+    </div>
+
+    <!-- Info -->
+    <div class="detail-info">
+      <div id="detail-cat-tag"></div>
+      <h1 class="detail-name" id="detail-name">Product Name</h1>
+      <div class="rating-row">
+        <span class="stars-big" id="detail-stars">★★★★★</span>
+        <span class="rating-num" id="detail-rating">4.9</span>
+        <span class="rating-count" id="detail-rev-count">(0 Reviews)</span>
+      </div>
+      <div class="price-row">
+        <span class="detail-price" id="detail-price">RM 0.00</span>
+        <span class="detail-price-old" id="detail-old-price"></span>
+        <span class="save-badge" id="detail-save" style="display:none;"></span>
+      </div>
+      <p class="detail-short-desc" id="detail-short-desc"></p>
+      <div class="chips-row" id="detail-chips"></div>
+      <hr class="divider"/>
+      <div class="qty-row">
+        <span class="qty-label">Quantity</span>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(-1)">-</button>
+          <span class="qty-val" id="qty-val">1</span>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <span class="stock-label">In Stock</span>
+      </div>
+      <div class="action-row">
+        <button class="btn-add-main" id="add-btn" onclick="addToCartDetail()">🛍️ Add to Cart</button>
+        <button class="btn-buynow">Buy Now</button>
+        <button class="btn-wish-main" onclick="this.textContent = this.textContent === '🤍' ? '❤️' : '🤍'">🤍</button>
+      </div>
+      <div class="delivery-box">
+        <div class="delivery-row">
+          <div class="d-icon">🚚</div>
+          <div><div class="d-title">Free Delivery</div><div class="d-sub">Orders above RM80 — 2 to 4 business days</div></div>
+        </div>
+        <hr class="divider"/>
+        <div class="delivery-row">
+          <div class="d-icon">🔄</div>
+          <div><div class="d-title">Easy Returns</div><div class="d-sub">30-day return policy for unopened items</div></div>
+        </div>
+        <hr class="divider"/>
+        <div class="delivery-row">
+          <div class="d-icon">🛡️</div>
+          <div><div class="d-title">100% Authentic</div><div class="d-sub">Verified and certified by Malaysian MOH</div></div>
         </div>
       </div>
     </div>
   </div>
-  <script>
-(function(){
+
+  <!-- Tabs -->
+  <div class="tabs-bar">
+    <button class="tab-btn active" onclick="switchTab('desc', this)">Description</button>
+    <button class="tab-btn" onclick="switchTab('ing', this)">Ingredients</button>
+    <button class="tab-btn" onclick="switchTab('rev', this)">Reviews</button>
+  </div>
+
+  <div class="tab-content active" id="tab-desc">
+    <p id="tab-desc-text" style="font-size:0.92rem; color:#5A7268; line-height:1.85;"></p>
+  </div>
+
+  <div class="tab-content" id="tab-ing">
+    <table class="ing-table">
+      <thead><tr><th>Ingredient</th><th>Purpose</th><th>Source</th><th>Standard</th></tr></thead>
+      <tbody id="ing-body"></tbody>
+    </table>
+  </div>
+
+  <div class="tab-content" id="tab-rev">
+    <div class="rev-summary">
+      <div class="big-rating">
+        <div class="big-num" id="rev-big-num">4.9</div>
+        <div class="big-stars">★★★★★</div>
+        <div class="big-count" id="rev-big-count">0 reviews</div>
+      </div>
+      <div class="rating-bars">
+        <div class="rbar-row"><span class="rbar-lbl">5★</span><div class="rbar-track"><div class="rbar-fill" style="width:82%"></div></div><span>82%</span></div>
+        <div class="rbar-row"><span class="rbar-lbl">4★</span><div class="rbar-track"><div class="rbar-fill" style="width:11%"></div></div><span>11%</span></div>
+        <div class="rbar-row"><span class="rbar-lbl">3★</span><div class="rbar-track"><div class="rbar-fill" style="width:5%"></div></div><span>5%</span></div>
+        <div class="rbar-row"><span class="rbar-lbl">2★</span><div class="rbar-track"><div class="rbar-fill" style="width:2%"></div></div><span>2%</span></div>
+        <div class="rbar-row"><span class="rbar-lbl">1★</span><div class="rbar-track"><div class="rbar-fill" style="width:0%"></div></div><span>0%</span></div>
+      </div>
+    </div>
+    <div id="reviews-list"></div>
+  </div>
+
+</div><!-- end #page-detail -->
+
+
+<!-- ═══════════════════════════════════════════
+     SINGLE JAVASCRIPT BLOCK
+════════════════════════════════════════════ -->
+<script>
+/* ── Data ── */
+const products = [
+  {
+    id: 1,
+    name: 'Water Spinach Crisps',
+    cat: 'food',
+    catLabel: 'Food & Beverage',
+    emoji: '🥬',
+    price: 3.00,
+    oldPrice: 5.00,
+    rating: 4.3,
+    reviews: 120,
+    isNew: false,
+    shortDesc: 'Crispy, crunchy, and healthy snack made from real water spinach',
+    desc: 'Our Water Spinach Crisps are crafted from freshly harvested kangkung sourced directly from certified farms in Kedah. Each batch is carefully dried and lightly seasoned to preserve the natural goodness of the leaf while delivering a satisfying crunch.',
+    chips: ['Rich in flavor','No preservatives','Plant-Based','Low fat'],
+    img: 'image/chips.jpeg',
+    ingredients: [
+      ['Water Spinach (Ipomoea aquatica)','Main ingredient','Kedah, Malaysia','FAO certified'],
+      ['Himalayan Pink Salt','Natural seasoning','Imported','ISO 16128'],
+      ['Sunflower Oil','Light frying medium','Refined, food-grade','Malaysian MOH'],
+      ['Rice Flour','Binding agent','Local, non-GMO','Halal certified'],
+    ],
+    reviews_data: [
+      {name:'Azim R.',init:'AR',stars:5,date:'May 2026',text:'Super addictive! My kids love it and it is all-natural.',verified:true},
+      {name:'Siti N.',init:'SN',stars:5,date:'Apr 2026',text:'Finally a healthy snack that actually tastes good!',verified:true},
+    ],
+  },
+  {
+    id: 2,
+    name: 'Water Spinach Foliar Fertiliser Spray',
+    cat: 'agri',
+    catLabel: 'Agriculture',
+    emoji: '🌱',
+    price: 36.00,
+    oldPrice: null,
+    rating: 4.9,
+    reviews: 87,
+    isNew: false,
+    shortDesc: 'Liquid Plant Nutrient Booster | Fast Absorption for Leaf Growth & Higher Yield',
+    desc: 'Formulated from concentrated water spinach extract enriched with Korean Natural Farming (KNF) bio-activators. Safe for all edible crops and approved for organic farming.',
+    chips: ['KNF-Based Formula','Organic Approved','All Crops Safe','Fast Absorption'],
+    img: 'image/foliarFertiliser.jpeg',
+    ingredients: [
+      ['Kangkung Extract (15%)','Primary nutrient source','GreenLeaf Farm, Kedah','FAO / KNF Standard'],
+      ['Fermented Plant Juice','Bio-activator','On-site fermented','KNF Protocol'],
+      ['Fish Amino Acid','Nitrogen source','Local fishery','Organic certified'],
+    ],
+    reviews_data: [
+      {name:'Pak Yusof',init:'PY',stars:5,date:'May 2026',text:'Visible difference in leaf color within 2 weeks!',verified:true},
+    ],
+  },
+  {
+    id: 3,
+    name: 'Water Spinach Extract Capsules',
+    cat: 'health',
+    catLabel: 'Healthcare & Wellness',
+    emoji: '💊',
+    price: 30.00,
+    oldPrice: 38.00,
+    rating: 4.8,
+    reviews: 64,
+    isNew: true,
+    shortDesc: 'Water Spinach Supplement | Antioxidant, Detox & Digestive Support',
+    desc: 'Each capsule contains a standardized extract of Ipomoea aquatica delivering iron, Vitamin A, Vitamin C, and dietary fiber. Registered with Malaysian MOH.',
+    chips: ['Vegetarian Capsule','MOH Registered','No Fillers','Third-Party Tested'],
+    img: 'image/capsule.jpeg',
+    ingredients: [
+      ['Kangkung Leaf Extract (400mg)','Active ingredient','Standardized 10:1','Malaysian MOH'],
+      ['Vegetable Capsule Shell','Encapsulant','Pharmaceutical grade','ISO 16128'],
+    ],
+    reviews_data: [
+      {name:'Nurul H.',init:'NH',stars:4,date:'Apr 2026',text:'Energy levels improved after one month. Digestion feels smoother.',verified:true},
+    ],
+  },
+  {
+    id: 4,
+    name: 'Water Spinach Face Mask',
+    cat: 'beauty',
+    catLabel: 'Beauty & Skincare',
+    emoji: '🫧',
+    price: 31.00,
+    oldPrice: null,
+    rating: 4.7,
+    reviews: 55,
+    isNew: false,
+    shortDesc: 'Dark Circle & Puffiness Care | Hydrating, Brightening & Anti-Fatigue',
+    desc: 'Infused with chlorophyll-rich kangkung essence, this sheet mask delivers intense hydration and brightening effects in just 20 minutes. No parabens, no sulfates.',
+    chips: ['No Parabens','CIR Compliant','All Skin Types','Vegan Formula'],
+    img: 'image/facemask.jpeg',
+    ingredients: [
+      ['Kangkung Leaf Extract','Antioxidant, brightening','GreenLeaf Farm','ISO 16128'],
+      ['Glycerin','Moisture retention','Vegetable-derived','CIR standard'],
+      ['Niacinamide (3%)','Reduces dark circles','Pharmaceutical grade','CIR / INCI'],
+      ['Aloe Vera Extract','Calming agent','Organic certified','ISO 16128'],
+    ],
+    reviews_data: [
+      {name:'Sarah K.',init:'SK',stars:5,date:'Apr 2026',text:'Skin looked so refreshed after the first use!',verified:true},
+      {name:'Aina Z.',init:'AZ',stars:5,date:'Mar 2026',text:'My weekly skincare must-have. Dark circles less visible now.',verified:true},
+    ],
+  },
+  {
+    id: 5,
+    name: 'Water Spinach Soothing Gel',
+    cat: 'beauty',
+    catLabel: 'Beauty & Skincare',
+    emoji: '🧴',
+    price: 20.00,
+    oldPrice: null,
+    rating: 4.6,
+    reviews: 42,
+    isNew: false,
+    shortDesc: 'Hydrating & Cooling Skin Gel | Moisturizing, Calming & Refreshing',
+    desc: 'A cooling gel packed with kangkung leaf extract and aloe vera, designed to soothe irritated skin, lock in moisture and leave the face refreshed throughout the day.',
+    chips: ['Alcohol-Free','Vegan','Fast Absorbing','All Skin Types'],
+    img: 'image/soothingGel.jpeg',
+    ingredients: [
+      ['Kangkung Leaf Extract','Soothing, antioxidant','GreenLeaf Farm','ISO 16128'],
+      ['Aloe Vera Gel (95%)','Cooling, hydrating base','Organic certified','CIR standard'],
+      ['Panthenol (Vit B5)','Skin repair','Pharmaceutical grade','CIR / INCI'],
+    ],
+    reviews_data: [
+      {name:'Farah M.',init:'FM',stars:5,date:'May 2026',text:'Feels so cooling after sun exposure. Love it!',verified:true},
+    ],
+  },
+  {
+    id: 6,
+    name: 'Water Spinach Detox Tea',
+    cat: 'health',
+    catLabel: 'Healthcare & Wellness',
+    emoji: '🍵',
+    price: 18.00,
+    oldPrice: null,
+    rating: 4.7,
+    reviews: 38,
+    isNew: false,
+    shortDesc: 'Herbal Cleansing Drink | Digestive Support, Antioxidant & Natural Wellness Tea',
+    desc: 'A gentle herbal blend of dried kangkung leaf, lemongrass, and pandan that supports daily digestive health and delivers a natural antioxidant boost.',
+    chips: ['Caffeine-Free','Natural Herbs','No Artificial Flavour','Halal'],
+    img: 'image/detoxTea.jpeg',
+    ingredients: [
+      ['Dried Kangkung Leaf','Antioxidant source','Kedah, Malaysia','FAO certified'],
+      ['Lemongrass','Digestive aid','Local organic farm','Halal certified'],
+      ['Pandan Leaf','Natural flavour','Local','Halal certified'],
+    ],
+    reviews_data: [
+      {name:'Rohani A.',init:'RA',stars:5,date:'Mar 2026',text:'Drink every morning. My digestion has improved so much.',verified:true},
+    ],
+  },
+  {
+    id: 7,
+    name: 'Water Spinach Kimchi',
+    cat: 'food',
+    catLabel: 'Food & Beverage',
+    emoji: '🥫',
+    price: 18.00,
+    oldPrice: null,
+    rating: 4.8,
+    reviews: 51,
+    isNew: false,
+    shortDesc: 'Fermented Water Spinach | Probiotic Healthy Kimchi | Spicy Korean-Style Vegetable',
+    desc: 'A fermented kangkung kimchi made using traditional Korean lacto-fermentation. Rich in probiotics and a natural source of vitamins with a bold, spicy flavour.',
+    chips: ['Probiotic-Rich','No MSG','Fermented Naturally','Halal'],
+    img: 'image/kimchi.jpeg',
+    ingredients: [
+      ['Water Spinach','Main vegetable','Kedah, Malaysia','FAO certified'],
+      ['Gochugaru (Korean chilli)','Flavour & heat','Imported','Food grade'],
+      ['Garlic & Ginger','Fermentation aid','Local, organic','Halal certified'],
+    ],
+    reviews_data: [
+      {name:'Lee S.',init:'LS',stars:5,date:'Apr 2026',text:'So good with white rice. Best local kimchi I have tried!',verified:true},
+    ],
+  },
+  {
+    id: 8,
+    name: 'Water Spinach Eye Serum',
+    cat: 'beauty',
+    catLabel: 'Beauty & Skincare',
+    emoji: '✨',
+    price: 21.00,
+    oldPrice: 28.00,
+    rating: 4.9,
+    reviews: 33,
+    isNew: true,
+    shortDesc: 'Dark Circle & Puffiness Care | Hydrating, Brightening & Anti-Fatigue',
+    desc: 'A lightweight eye serum formulated with kangkung extract, niacinamide and caffeine to visibly reduce dark circles, depuff tired eyes and improve skin elasticity around the eye area.',
+    chips: ['Fragrance-Free','Ophthalmologist Tested','CIR Compliant','Vegan'],
+    img: 'image/eyeSerum.jpeg',
+    ingredients: [
+      ['Kangkung Leaf Extract','Antioxidant, brightening','GreenLeaf Farm','ISO 16128'],
+      ['Niacinamide (5%)','Reduces dark circles','Pharmaceutical grade','CIR / INCI'],
+      ['Caffeine (1%)','Depuffing agent','Pharmaceutical grade','CIR / INCI'],
+      ['Hyaluronic Acid','Deep hydration','Biofermented','ISO 16128'],
+    ],
+    reviews_data: [
+      {name:'Melissa T.',init:'MT',stars:5,date:'May 2026',text:'The dark circles under my eyes are noticeably lighter after 3 weeks!',verified:true},
+    ],
+  },
+];
+
+/* ── State ── */
+let cartCount = 0;
+let currentProduct = null;
+let currentQty = 1;
+let currentFilter = 'all';
+let maxPrice = 50;
+
+/* ── Cart badge sync across pages ── */
+function syncCartBadges() {
+  ['cart-count','cart-count-all','cart-count-detail'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = cartCount;
+  });
+}
+
+/* ── Page navigation ── */
+function showPage(page, productId = null) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  if (page === 'all') {
+    document.getElementById('page-all').classList.add('active');
+    renderProducts();
+  } else if (page === 'detail') {
+    document.getElementById('page-detail').classList.add('active');
+    loadProduct(productId);
+  } else {
+    document.getElementById('page-listing').classList.add('active');
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── Render all-products grid ── */
+currentMaxPrice = maxPrice;
+
+function renderProducts() {
+
+  const grid = document.getElementById('all-products-grid');
+
+  const filtered = products.filter(p => {
+    const catMatch =
+      currentFilter === 'all' || p.cat === currentFilter;
+
+    const priceMatch =
+      p.price <= currentMaxPrice;
+
+    return catMatch && priceMatch;
+  });
+
+  grid.innerHTML = filtered.map(p => `
+    
+    <div class="product-card"
+         onclick="showPage('detail', ${p.id})">
+
+      <div class="product-img-wrap"
+           style="background:#f0f0eb;height:220px;">
+
+        <span class="product-cat-tag ${
+          p.cat === 'food'
+            ? 'tag-food'
+            : p.cat === 'health'
+            ? 'tag-health'
+            : p.cat === 'beauty'
+            ? 'tag-beauty'
+            : 'tag-agri'
+        }">
+
+          ${p.catLabel}
+
+        </span>
+
+        ${p.isNew
+          ? `<span class="product-badge-new">NEW</span>`
+          : ''
+        }
+
+        <img src="${p.img}"
+             alt="${p.name}"
+             style="
+               width:100%;
+               height:100%;
+               object-fit:contain;
+               padding:16px;
+             ">
+
+      </div>
+
+      <div class="product-body">
+
+        <div class="product-name">
+          ${p.name}
+        </div>
+
+        <div class="product-desc">
+          ${p.shortDesc}
+        </div>
+
+        <div class="product-rating">
+          ${'★'.repeat(Math.round(p.rating))}
+          <span>(${p.rating})</span>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+          <span class="product-price">
+            RM ${p.price.toFixed(2)}
+          </span>
+
+        </div>
+
+        <div class="d-flex gap-2">
+
+          <button class="btn-add-cart flex-grow-1"
+            onclick="event.stopPropagation(); addToCart(${p.id});">
+
+            <i class="bi bi-bag-plus"></i>
+            Add to Cart
+
+          </button>
+
+          <button class="btn-wishlist"
+            onclick="event.stopPropagation(); toggleWishBtn(this);">
+
+            <i class="bi bi-heart"></i>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `).join('');
+}
+
+renderProducts();
+
+/* ── Filter & price ── */
+function setFilter(filter, btn) {
+  currentFilter = filter;
+  document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts();
+}
+
+function setMaxPrice(value) {
+  maxPrice = Number(value);
+  document.getElementById('price-label').textContent = 'RM ' + value;
+  renderProducts();
+}
+
+/* ── Load product detail ── */
+function loadProduct(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  currentProduct = p;
+  currentQty = 1;
+  document.getElementById('qty-val').textContent = '1';
+
+  document.getElementById('bc-name').textContent = p.name;
+  document.getElementById('detail-name').textContent = p.name;
+  document.getElementById('detail-price').textContent = 'RM ' + p.price.toFixed(2);
+  document.getElementById('detail-short-desc').textContent = p.shortDesc;
+  document.getElementById('detail-rating').textContent = p.rating;
+  document.getElementById('detail-rev-count').textContent = '(' + p.reviews + ' Reviews)';
+  document.getElementById('rev-big-num').textContent = p.rating;
+  document.getElementById('rev-big-count').textContent = p.reviews + ' reviews';
+  document.getElementById('detail-stars').textContent = p.rating >= 4.5 ? '★★★★★' : '★★★★☆';
+
+  const oldEl = document.getElementById('detail-old-price');
+  const saveEl = document.getElementById('detail-save');
+  if (p.oldPrice) {
+    oldEl.textContent = 'RM ' + p.oldPrice.toFixed(2);
+    const pct = Math.round((1 - p.price / p.oldPrice) * 100);
+    saveEl.textContent = 'Save ' + pct + '%';
+    saveEl.style.display = 'inline-flex';
+  } else {
+    oldEl.textContent = '';
+    saveEl.style.display = 'none';
+  }
+
+  document.getElementById('detail-cat-tag').innerHTML =
+    '<span class="cat-tag tag-' + p.cat + '">' + p.catLabel + '</span>';
+  document.getElementById('detail-badge-new').innerHTML =
+    p.isNew ? '<span class="product-badge-new" style="position:absolute;top:12px;right:12px;">NEW</span>' : '';
+  document.getElementById('main-img-emoji').textContent = p.emoji;
+
+  const thumbEmojis = [p.emoji, '📦', '🏷️', '✨'];
+  document.getElementById('thumb-row').innerHTML = thumbEmojis.map((e, i) =>
+    '<div class="thumb' + (i === 0 ? ' active' : '') + '" onclick="switchThumb(' + i + ')">' + e + '</div>'
+  ).join('');
+
+  document.getElementById('detail-chips').innerHTML =
+    p.chips.map(c => '<div class="chip">✓ ' + c + '</div>').join('');
+
+  document.getElementById('tab-desc-text').textContent = p.desc;
+
+  document.getElementById('ing-body').innerHTML = p.ingredients.map(r =>
+    '<tr><td style="font-weight:600;color:#1A2E28;">' + r[0] +
+    '</td><td>' + r[1] + '</td><td>' + r[2] + '</td><td>' + r[3] + '</td></tr>'
+  ).join('');
+
+  document.getElementById('reviews-list').innerHTML = p.reviews_data.map(r =>
+    '<div class="review-card">' +
+      '<div class="rev-header">' +
+        '<div class="rev-avatar">' + r.init + '</div>' +
+        '<div><div class="rev-name">' + r.name + '</div><div class="rev-date">' + r.date + '</div></div>' +
+        '<div class="rev-stars" style="margin-left:auto;">' + '★'.repeat(r.stars) + '☆'.repeat(5 - r.stars) + '</div>' +
+      '</div>' +
+      '<div class="rev-text">' + r.text + '</div>' +
+      (r.verified ? '<div class="verified">✓ Verified Purchase</div>' : '') +
+    '</div>'
+  ).join('');
+
+  // Reset tabs
+  switchTab('desc', document.querySelector('.tab-btn'));
+
+  // Reset add button
+  const btn = document.getElementById('add-btn');
+  btn.textContent = '🛍️ Add to Cart';
+  btn.style.background = '';
+}
+
+/* ── Thumbnail switch ── */
+function switchThumb(idx) {
+  document.querySelectorAll('.thumb').forEach((t, i) => t.classList.toggle('active', i === idx));
+  if (!currentProduct) return;
+  const emojis = [currentProduct.emoji, '📦', '🏷️', '✨'];
+  document.getElementById('main-img-emoji').textContent = emojis[idx] || currentProduct.emoji;
+}
+
+/* ── Tab switch ── */
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  document.getElementById('tab-' + tab).classList.add('active');
+}
+
+/* ── Quantity ── */
+function changeQty(delta) {
+  currentQty = Math.max(1, currentQty + delta);
+  document.getElementById('qty-val').textContent = currentQty;
+}
+
+/* ── Add to cart (from listing / all-products) ── */
+function addToCart(id) {
+  const p = products.find(x => x.id === id);
+  if (!p) return;
+  cartCount++;
+  syncCartBadges();
+  showToast('Added ' + p.name.split(' - ')[0] + ' to cart!');
+}
+
+/* ── Add to cart (from detail page) ── */
+function addToCartDetail() {
+  if (!currentProduct) return;
+  cartCount += currentQty;
+  syncCartBadges();
+  showToast('Added ' + currentQty + '× ' + currentProduct.name + ' to cart!');
+  const btn = document.getElementById('add-btn');
+  btn.textContent = '✓ Added!';
+  btn.style.background = '#3AAFA0';
+  setTimeout(() => { btn.textContent = '🛍️ Add to Cart'; btn.style.background = ''; }, 2000);
+}
+
+/* ── Wishlist toggle (listing cards) ── */
+function toggleWishBtn(btn) {
+  const icon = btn.querySelector('i');
+  if (icon.classList.contains('bi-heart')) {
+    icon.classList.replace('bi-heart', 'bi-heart-fill');
+    btn.style.color = '#E8923A';
+    btn.style.borderColor = '#E8923A';
+  } else {
+    icon.classList.replace('bi-heart-fill', 'bi-heart');
+    btn.style.color = '';
+    btn.style.borderColor = '';
+  }
+}
+
+/* ── Toast ── */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* ── Category dropdown hover ── */
+(function() {
   const trigger = document.getElementById('cat-trigger');
   const dropdown = document.getElementById('cat-dropdown');
   const caret = document.getElementById('cat-caret');
+  if (!trigger || !dropdown) return;
   let t;
-  const open = () => { clearTimeout(t); dropdown.classList.add('open'); caret.style.transform = 'rotate(180deg)'; };
+  const open  = () => { clearTimeout(t); dropdown.classList.add('open'); caret.style.transform = 'rotate(180deg)'; };
   const close = () => { t = setTimeout(() => { dropdown.classList.remove('open'); caret.style.transform = ''; }, 150); };
   trigger.addEventListener('mouseenter', open);
   trigger.addEventListener('mouseleave', close);
@@ -965,151 +1252,6 @@ footer a:hover { color: #9FE5C8; }
   dropdown.addEventListener('mouseleave', close);
 })();
 </script>
-<div class="trust-bar-spacer"></div>
-
-
-<!-- Best Sellers Section -->
-<section style="background: #F6F4F0; padding: 70px 0;">
-    <div class="container">
-
-        <!-- Header -->
-        <div class="d-flex align-items-start justify-content-between mb-5 flex-wrap gap-3">
-            <div>
-                <span class="section-tag">Top Picks</span>
-                <h2 class="section-title" style="font-family:'Playfair Display',serif;">Our Best Sellers Products</h2>
-                <p class="section-desc">Discover our most loved natural products</p>
-            </div>
-            <a href="#" class="btn-outline-brand" style="white-space:nowrap; align-self: flex-end;">View all products</a>
-        </div>
-
-<!-- Product Grid -->
- <div class="row g-4">
-
-    <!-- Card 1: Agriculture -->
-     <div class="col-6 col-lg-3">
-        <div class="product-card">
-            <div class="product-img-wrap" style="background: #f0f0eb; height: 220px;">
-                <span class="product-cat-tag tag-agri">Agriculture</span>
-                <img src="image/foliarFertiliser.jpeg" alt="Water Spinach Foliar Fertiliser Spray"
-                style="width: 100%; height: 100%; object-fit: contain; padding: 16px;">
-            </div>
-        <div class="product-body">
-            <div class="product-name">Water Spinach Foliar Fertiliser Spray</div>
-            <div class="product-desc">Liquid Plant Nutrient Booster | Fast Absoption for Leaf Growth & Higher Yield</div>
-            <div class="product-rating">★★★★★ <span>(4.9)</span></div>
-            <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="product-price">RM 36.00</span>
-            </div>
-            <div class="d-flex gap-2">
-                <button class="btn-add-cart flex-grow-1"><i class="bi bi-bag-plus"></i>Add to Cart</button>
-                <button class="btn-wishlist"><i class="bi bi-heart"></i></button>
-            </div>
-        </div>
-        </div>
-     </div>
-
-     <!-- Card 2: Healthcare -->
-      <div class="col-6 col-lg-3">
-        <div class="product-card">
-          <div class="product-img-wrap" style="background:#f0f0eb; height:220px;">
-            <span class="product-cat-tag tag-health">Healthcare</span>
-            <span class="product-badge-new">NEW</span>
-            <img src="image/capsule.jpeg" alt="Water Spinach Extract Capsules"
-                 style="width:100%; height:100%; object-fit:contain; padding:16px;">
-          </div>
-          <div class="product-body">
-            <div class="product-name">Water Spinach Extract Capsules</div>
-            <div class="product-desc">Water Spinach Supplement | Antioxidant, Detox & Digestive Support</div>
-            <div class="product-rating">★★★★★ <span>(4.8)</span></div>
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="product-price">RM 30.00</span>
-            </div>
-            <div class="d-flex gap-2">
-              <button class="btn-add-cart flex-grow-1"><i class="bi bi-bag-plus"></i> Add to Cart</button>
-              <button class="btn-wishlist"><i class="bi bi-heart"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: Beauty -->
-      <div class="col-6 col-lg-3">
-        <div class="product-card">
-          <div class="product-img-wrap" style="background:#f0f0eb; height:220px;">
-            <span class="product-cat-tag tag-beauty">Beauty</span>
-            <img src="image/facemask.jpeg" alt="Water Spinach Face Mask"
-                 style="width:100%; height:100%; object-fit:contain; padding:16px;">
-          </div>
-          <div class="product-body">
-            <div class="product-name">Water Spinach Face Mask</div>
-            <div class="product-desc">Dark Circle & Puffiness Care | Hydrating, Brightening & Anti-Fatigue</div>
-            <div class="product-rating">★★★★★ <span>(4.7)</span></div>
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="product-price">RM 31.00</span>
-            </div>
-            <div class="d-flex gap-2">
-              <button class="btn-add-cart flex-grow-1"><i class="bi bi-bag-plus"></i> Add to Cart</button>
-              <button class="btn-wishlist"><i class="bi bi-heart"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4: Beauty -->
-      <div class="col-6 col-lg-3">
-        <div class="product-card">
-          <div class="product-img-wrap" style="background:#f0f0eb; height:220px;">
-            <span class="product-cat-tag tag-beauty">Beauty</span>
-            <img src="image/soothingGel.jpeg" alt="Water Spinach Soothing Gel"
-                 style="width:100%; height:100%; object-fit:contain; padding:16px;">
-          </div>
-          <div class="product-body">
-            <div class="product-name">Water Spinach Soothing Gel</div>
-            <div class="product-desc">Hydrating & Cooling Skin Gel | Moisturizing, Calming & Refreshing</div>
-            <div class="product-rating">★★★★☆ <span>(4.6)</span></div>
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <span class="product-price">RM 20.00</span>
-            </div>
-            <div class="d-flex gap-2">
-              <button class="btn-add-cart flex-grow-1"><i class="bi bi-bag-plus"></i> Add to Cart</button>
-              <button class="btn-wishlist"><i class="bi bi-heart"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Scrolling ticker -->
-  <div style="background:#2F3F2E; margin-top:56px; padding:14px 0; overflow:hidden; white-space:nowrap;">
-    <div style="display:inline-block; animation:ticker 18s linear infinite;">
-      <span style="color:#fff; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; margin:0 32px;">Agriculture</span>
-      <span style="color:#C4B54A; font-size:0.6rem;">◆</span>
-      <span style="color:#fff; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; margin:0 32px;">Beauty Care</span>
-      <span style="color:#C4B54A; font-size:0.6rem;">◆</span>
-      <span style="color:#fff; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; margin:0 32px;">Food</span>
-      <span style="color:#C4B54A; font-size:0.6rem;">◆</span>
-      <span style="color:#fff; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; margin:0 32px;">Healthcare</span>
-      <span style="color:#C4B54A; font-size:0.6rem;">◆</span>
-      <span style="color:#fff; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; margin:0 32px;">Agriculture</span>
-      <span style="color:#C4B54A; font-size:0.6rem;">◆</span>
-      <span style="color:#fff; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; margin:0 32px;">Beauty Care</span>
-      <span style="color:#C4B54A; font-size:0.6rem;">◆</span>
-      <span style="color:#fff; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; margin:0 32px;">Food</span>
-      <span style="color:#C4B54A; font-size:0.6rem;">◆</span>
-      <span style="color:#fff; font-size:0.85rem; font-weight:600; letter-spacing:0.08em; margin:0 32px;">Healthcare</span>
-      <span style="color:#C4B54A; font-size:0.6rem;">◆</span>
-    </div>
-  </div>
-</section>
-
- </div>
-    </div>
-</section>
-</body>
-  
-</section>
 
 </body>
 </html>
